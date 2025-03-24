@@ -21,7 +21,7 @@ Console.WriteLine();
 verificarMatriz(matrizPreenchida);
 
 
-static int[,] gerarMatriz(string insercoes)
+static int[,] gerarMatriz(string numPredefinidos)
 {
     int[,] matriz = new int[9, 9];
 
@@ -32,10 +32,10 @@ static int[,] gerarMatriz(string insercoes)
         for (int j = 0; j < 9; j++)
         {
             
-            if (aux < insercoes.Length)
+            if (aux < numPredefinidos.Length)
             {
                 //Converter o char para int
-                matriz[i, j] = insercoes[aux] - '0';
+                matriz[i, j] = numPredefinidos[aux] - '0';
                 aux++;
             }
         }
@@ -122,7 +122,7 @@ static void verificarMatriz(int[,] matriz)
     }
 }
 
-static int[,] preencherMatriz(int[,] matriz, string insercoes)
+static int[,] preencherMatriz(int[,] matriz, string valores)
 {
     int aux = 0;
 
@@ -131,12 +131,12 @@ static int[,] preencherMatriz(int[,] matriz, string insercoes)
         for (int j = 0; j < 9; j++)
         {
 
-            if (aux < insercoes.Length)
+            if (aux < valores.Length)
             {
                 if (matriz[i, j] == 0) 
                 
                 {
-                    matriz[i, j] = insercoes[aux] - '0';
+                    matriz[i, j] = valores[aux] - '0';
                     aux++;
                 }
             }
